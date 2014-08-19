@@ -1,0 +1,24 @@
+{% extends 'IMGGaming/base.html' %}
+
+{% load static %}
+	{% block title %}IMG Gaming{% endblock %}
+		{% block body_block %}
+		<h1>IMGGaming</h1>
+	{% if user.is_authenticated %}
+	    <h1>You are logged in as {{ user.username }}!</h1>
+	{% else %}
+	    <h1>You are not logged in</h1>
+	{% endif %}
+        
+        {% if reports %}
+            <ul>
+		{% for report in reports %}
+		<li><a href="/IMGGaming/report/{{ report.event }}">{{ report.event }}</a></li>
+                {% endfor %}
+	    </ul>
+	{% else %}
+	    <strong>There are no reports present.</strong>
+	{% endif %}
+
+	<img src='{% static 'img_logo.jpg' %}' alt='IMG Logo' />
+	{% endblock %}

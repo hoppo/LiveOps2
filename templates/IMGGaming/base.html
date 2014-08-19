@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %} IMG Gaming {% endblock %}</title>
+    </head>
+
+    <body>
+	<div>
+        {% block body_block %}{% endblock %}
+    	</div>
+	<hr />
+        <div>
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="/IMGGaming/add_report/">Add a New Report</a></li>
+                <li><a href="/IMGGaming/logout/">Logout</a></li>
+            {% else %}
+                <li><a href="/IMGGaming/register/">Register Here</a></li>
+                <li><a href="/IMGGaming/login/">Login</a></li>
+            {% endif %}
+
+                <li><a href="/IMGGaming/about/">About</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

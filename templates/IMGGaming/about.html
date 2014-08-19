@@ -1,0 +1,10 @@
+{% extends 'IMGGaming/base.html' %}
+{% load static %}
+
+{% block title %} About {% endblock %}
+	{% block body_block %}
+        <h1>IMG Gaming...</h1>
+        about page! <strong>{{ boldmessage }}</strong><br />
+        <a href='/IMGGaming/'>Index</a><br />
+        <img src='{% static 'img_logo.jpg' %}' alt='IMG Logo' />
+	{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'IMGGaming/base.html' %}
+
+{% block title %}{{ report_name }}{% endblock %}
+    {% block body_block %}    
+	<h1>{{ report_name }}</h1>
+        {% if report_name %}
+            Print all report items
+        {% else %}
+            The specified report {{ report_name }} does not exist!
+        {% endif %}
+   {% endblock %}

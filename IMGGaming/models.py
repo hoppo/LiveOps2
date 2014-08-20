@@ -17,7 +17,7 @@ class Report(models.Model):
         return self.event
 
     class Meta:
-        ordering = ['datetime']
+        ordering = ['-datetime']
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)

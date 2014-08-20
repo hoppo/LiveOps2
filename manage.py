@@ -2,6 +2,7 @@
 import os
 import sys
 
+#this is a comment
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "LiveOperations_project.settings")
 

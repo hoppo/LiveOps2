@@ -5,13 +5,14 @@
 	{% block title %}Register{% endblock %}
 
 		{% block body_block %}
-        <h1>Register for Live Operations</h1>
+<div class="hero-unit">
+        <h2>Register for Live Operations</h2>
 
         {% if registered %}
         Live Operations  says: <strong>thank you for registering!</strong>
         <a href="/IMGGaming/">Return to the homepage.</a><br />
         {% else %}
-        <strong>register here!</strong><br />
+<hr />
 
         <form id="user_form" method="post" action="/IMGGaming/register/"
                 enctype="multipart/form-data">
@@ -24,5 +25,6 @@
             <input type="submit" name="submit" value="Register" />
         </form>
         {% endif %}
+</div>
 {% endblock %}
 

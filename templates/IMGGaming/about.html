@@ -2,9 +2,12 @@
 {% load static %}
 
 {% block title %} About {% endblock %}
-	{% block body_block %}
-        <h1>IMG Gaming...</h1>
+{% block body_block %}
+<div class="hero-unit">
+        <h2>IMG Gaming...</h2>
+<hr />
         about page! <strong>{{ boldmessage }}</strong><br />
         <a href='/IMGGaming/'>Index</a><br />
         <img src='{% static 'img_logo.jpg' %}' alt='IMG Logo' />
-	{% endblock %}
+</div>
+{% endblock %}

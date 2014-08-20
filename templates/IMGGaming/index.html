@@ -3,13 +3,14 @@
 {% load static %}
 	{% block title %}IMG Gaming{% endblock %}
 		{% block body_block %}
-		<h1>IMGGaming</h1>
+<div class="hero-unit">
+		<h2>IMGGaming</h2>
 	{% if user.is_authenticated %}
-	    <h1>You are logged in as {{ user.username }}!</h1>
+	    <h2>You are logged in as {{ user.username }}!</h2>
 	{% else %}
-	    <h1>You are not logged in</h1>
+	    <h2>You are not logged in</h2>
 	{% endif %}
-        
+<hr />
         {% if reports %}
             <ul>
 		{% for report in reports %}
@@ -21,4 +22,5 @@
 	{% endif %}
 
 	<img src='{% static 'img_logo.jpg' %}' alt='IMG Logo' />
+</div>
 	{% endblock %}

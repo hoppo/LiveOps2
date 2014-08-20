@@ -1,11 +1,14 @@
 {% extends 'IMGGaming/base.html' %}
 
 {% block title %}{{ report_name }}{% endblock %}
-    {% block body_block %}    
-	<h1>{{ report_name }}</h1>
+    {% block body_block %}
+<div class="hero-unit">    
+	<h2>{{ report_name }}</h2>
+<hr />
         {% if report_name %}
             Print all report items
         {% else %}
             The specified report {{ report_name }} does not exist!
         {% endif %}
+</div>
    {% endblock %}

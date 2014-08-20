@@ -12,23 +12,68 @@
     </head>
 
     <body>
-	<div>
-        {% block body_block %}{% endblock %}
-    	</div>
-	<hr />
-        <div>
-            <ul>
-            {% if user.is_authenticated %}
-                <li><a href="/IMGGaming/add_report/">Add a New Report</a></li>
-                <li><a href="/IMGGaming/logout/">Logout</a></li>
-            {% else %}
-                <li><a href="/IMGGaming/register/">Register Here</a></li>
-                <li><a href="/IMGGaming/login/">Login</a></li>
-            {% endif %}
 
-                <li><a href="/IMGGaming/about/">About</a></li>
-            </ul>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="navbar-inner">
+       <div class="container">
+           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="brand" href="/IMGGaming/">IMGGaming</a>
+
+           <div class="nav-collapse collapse">
+               <ul class="nav pull-right">
+                   {% if user.is_authenticated %}
+                    <li class="navbar-text">Welcome, {{ user.username }}!</li>
+                    <li><a href="/IMGGaming/logout/">Logout</a></li>
+                   {% else %}
+                    <li><a href="/IMGGaming/register/">Register Here</a></li>
+                    <li><a href="/IMGGaming/login/">Login</a></li>
+                   {% endif %}
+               </ul>
+               <ul class="nav">
+                   {% if user.is_authenticated %}
+                    <li><a href="/IMGGaming/add_report/">Add a New Report</a></li>
+                   {% endif %}
+                   <li><a href="/IMGGaming/about/">About</a></li>
+               </ul>
+           </div>
+           <!--/.nav-collapse -->
+       </div>
+   </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <!--- Empty for the timebeing -->
+            </div>
+            <!--/.well -->
         </div>
+        <!--/span-->
+        <div class="span9">
+            {% block body_block %}
+            {% endblock %}
+        </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
+</div>
+<!--/.fluid-container-->
+
+<hr>
+
+<footer>
+    <div class="container">
+        <p>&copy; John Hopkins 2014</p>
+    </div>
+</footer>
+
+
+
 	<script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
     </body>

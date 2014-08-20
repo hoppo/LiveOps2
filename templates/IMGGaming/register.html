@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>IMG Gaming</title>
-    </head>
+{% extends 'IMGGaming/base.html' %}
 
-    <body>
+{% load static %}
+
+	{% block title %}Register{% endblock %}
+
+		{% block body_block %}
         <h1>Register for Live Operations</h1>
 
         {% if registered %}
@@ -24,5 +24,5 @@
             <input type="submit" name="submit" value="Register" />
         </form>
         {% endif %}
-    </body>
-</html>
+{% endblock %}
+

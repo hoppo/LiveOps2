@@ -34,11 +34,11 @@ def about(request):
 def report(request, report_name_url):
     context = RequestContext(request)
     report_name = report_name_url.replace('_', ' ')
-    context_dict = {'report_name': report_name}
     try:
         report = Report.objects.get(event=report_name)
     except Report.DoesNotExist:
 	return HttpResponse('nothing doing')
+    context_dict = {'report_name': report_name, 'report': report}
     return render_to_response('IMGGaming/report.html', context_dict, context)
 
 @login_required

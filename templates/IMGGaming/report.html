@@ -3,11 +3,18 @@
 {% block title %}{{ report_name }}{% endblock %}
     {% block body_block %}
 <div class="hero-unit">    
-	<h2>{{ report_name }}</h2>
-<hr />
-        {% if report_name %}
-            Print all report items
-        {% else %}
+	<h2>{{ report.event }}</h2>
+        
+    {% if report_name %}
+<p>{{report.author}}
+<p>{{report.datetime}}
+<p>{{report.diagnosis}}
+<p>{{report.impact}}
+<p>{{report.resolution}}
+<p>{{report.responsibility}}
+<p>{{report.actionable}}
+<p>{{report.action}} 
+    {% else %}
             The specified report {{ report_name }} does not exist!
         {% endif %}
 </div>

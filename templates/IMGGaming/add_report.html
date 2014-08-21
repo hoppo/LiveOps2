@@ -16,9 +16,16 @@
     {% endif %}
 
 <form class="span6" id="report_form" method="post" action="/IMGGaming/add_report/">
+
+
         <table>
-            {{ form.as_table }}
+{% for field in form.visible_fields %}
+           <tr><td>{{field.label}}: </td><td>{{ field }}</tr></td>
+        {% endfor %}
         </table>
+
+
+
         {% csrf_token %}
             <br/>
             <button class="btn btn-primary" type="submit" name="submit">Add Report</button>

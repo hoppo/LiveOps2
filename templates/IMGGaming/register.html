@@ -6,7 +6,7 @@
 
 {% block body_block %}
 <div class="hero-unit">
-    <h2>Register for Live Operations</h2>
+    <h2>Register here to use the Live Operations site</h2>
 
         <div class="container">
         {% if registered %}
@@ -16,7 +16,6 @@
         <form class="form-signin span8" id="user_form" method="post" action="/IMGGaming/register/"
               enctype="multipart/form-data">
             {% csrf_token %}
-            <h2 class="form-signin-heading">Sign up Here</h2>
 	    {% for field in user_form.visible_fields %}
             {{ field.errors }}
             {{ field.help_text }}<br />

@@ -7,19 +7,19 @@
     <h2>Add a Report</h2>
     <br/>
     <div class="container">
-        	<form class="span6" id="report_form" method="post" action="/IMGGaming/add_report/">
 
-            	{% csrf_token %}
-            	{% for hidden in form.hidden_fields %}
-		{{ hidden }}
-	        {% endfor %}
-	
-       	        {% for field in form.visible_fields %}
-	        {{ field.errors }}
-        	{{ field.help_text }}
-                {{ field }}<br>
-	        {% endfor %}
 
+{% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+<form class="span6" id="report_form" method="post" action="/IMGGaming/add_report/">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
             <br/>
             <button class="btn btn-primary" type="submit" name="submit">Add Report</button>
         </form>

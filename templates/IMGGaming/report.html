@@ -6,14 +6,14 @@
 	<h2>{{ report.event }}</h2>
         
     {% if report_name %}
-<p>{{report.author}}
-<p>{{report.datetime}}
-<p>{{report.diagnosis}}
-<p>{{report.impact}}
-<p>{{report.resolution}}
-<p>{{report.responsibility}}
-<p>{{report.actionable}}
-<p>{{report.action}} 
+<p><strong>Author: </strong>{{report.author}}
+<p><strong>Date: </strong>{{report.datetime}}
+<p><strong>Diagnosis: </strong>{{report.diagnosis}}
+<p><strong>Impact: </strong>{{report.impact}}
+<p><strong>Resolution: </strong>{{report.resolution}}
+<p><strong>Responsibility: </strong>{{report.responsibility}}
+<p><strong>Actionable: </strong>{{report.actionable}}
+<p><strong>Action: </strong>{{report.action}} 
     {% else %}
             The specified report {{ report_name }} does not exist!
         {% endif %}

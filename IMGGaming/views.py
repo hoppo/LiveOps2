@@ -12,7 +12,7 @@ def index(request):
     report_list = Report.objects.all()
     context_dict = {'reports': report_list}
     for report in report_list:
-        report.event = report.event.replace(' ', '_')
+        report.url = report.event.replace(' ', '_')
     response = render_to_response('IMGGaming/index.html', context_dict, context)
     visits = int(request.COOKIES.get('visits', '0'))
     if 'last_visit' in request.COOKIES:

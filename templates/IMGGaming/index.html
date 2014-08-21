@@ -16,7 +16,7 @@
         {% if reports %}
             <ul>
 		{% for report in reports %}
-		<li><a href="/IMGGaming/report/{{ report.event }}">{{ report.event }}</a></li>
+		<li><a href="/IMGGaming/report/{{ report.url }}">{{ report.event }}</a></li>
                 {% endfor %}
 	    </ul>
 	{% else %}

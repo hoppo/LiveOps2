@@ -7,15 +7,14 @@ class ReportForm(forms.ModelForm):
     event = forms.CharField(max_length=100)
     author = forms.CharField(max_length=40)
     datetime = forms.DateTimeField()
-    diagnosis = forms.CharField(widget=forms.Textarea)
-    impact = forms.CharField(widget=forms.Textarea)
-    resolution  = forms.CharField(widget=forms.Textarea)
-    responsibility = forms.CharField(widget=forms.Textarea)
+    diagnosis = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%' }))
+    impact = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
+    resolution  = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
+    responsibility = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
     actionable = forms.BooleanField(required=False)
-    action = forms.CharField(widget=forms.Textarea)
+    action = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
 
     class Meta:
-        # Provide an association between the ModelForm and a model
         model = Report
 
 class UserForm(forms.ModelForm):

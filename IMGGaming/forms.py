@@ -7,12 +7,12 @@ class ReportForm(forms.ModelForm):
     event = forms.CharField(max_length=100)
     author = forms.CharField(max_length=40)
     datetime = forms.DateTimeField()
-    diagnosis = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%' }))
-    impact = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
-    resolution  = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
-    responsibility = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
+    diagnosis = forms.CharField(widget=forms.Textarea(attrs={'cols': 80, 'rows': 3, 'style': 'width:67%; box-sizing: border-box'}))
+    impact = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%; box-sizing: border-box'}))
+    resolution  = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%; box-sizing: border-box'}))
+    responsibility = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%; box-sizing: border-box'}))
     actionable = forms.BooleanField(required=False)
-    action = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%'}))
+    action = forms.CharField(widget=forms.Textarea(attrs={'cols': 200, 'rows': 3, 'style': 'width:67%; box-sizing: border-box'}))
 
     class Meta:
         model = Report

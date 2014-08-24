@@ -13,12 +13,10 @@
         {% endif %}
 
         <form id="report_form" method="post" action="/IMGGaming/add_report/">
-	    <table>
-                {% for field in form.visible_fields %}
-		    <tr><td>{{field.label}}: </td></tr><tr><td>{{ field }}</td></tr>
-                {% endfor %}
+		<table>
+                {{ form.as_table }}
             </table>
-            {% csrf_token %}
+		{% csrf_token %}
             <br/>
             <button class="btn btn-primary" type="submit" name="submit">Add Report</button>
         </form>

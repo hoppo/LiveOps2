@@ -50,15 +50,15 @@
         <div class="span3">
             <div class="well sidebar-nav">
 		<a href="/IMGGaming/"><h3 align='center'>IMG Gaming</h3></a>
-		<img src='{% static 'img_logo.jpg' %}' alt='IMG Logo' />
             </div>
             <!--/.well -->
         </div>
         <!--/span-->
         <div class="span9">
-            {% block body_block %}
-            {% endblock %}
-        </div>
+		{% block body_block %}
+	
+		{% endblock %}
+	</div>
         <!--/span-->
     </div>
     <!--/row-->
@@ -72,8 +72,6 @@
         <p>&copy; John Hopkins 2014</p>
     </div>
 </footer>
-
-
 
 	<script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>

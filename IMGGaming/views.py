@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
+from django.core.mail import send_mail
 
 def index(request):
     context = RequestContext(request)
@@ -48,7 +49,14 @@ def add_report(request):
         form = ReportForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-            return index(request)
+            cd = form.cleaned_data
+	    send_mail(
+                cd['event'],
+                cd['diagnosis'],
+                cd.get('email', 'noreply@example.com'),
+                ['siteowner@example.com'],
+            )
+	    return index(request)
         else:
             print form.errors
     else:

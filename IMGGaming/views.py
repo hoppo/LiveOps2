@@ -53,8 +53,8 @@ def add_report(request):
 	    send_mail(
                 cd['event'],
                 cd['diagnosis'],
-                cd.get('email', 'noreply@example.com'),
-                ['siteowner@example.com'],
+                cd.get('email', 'johnhopkins@gmx.co.uk'),
+                ['john@johnhopkins.co.uk'],
             )
 	    return index(request)
         else:

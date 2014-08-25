@@ -51,12 +51,15 @@ def add_report(request):
             form.save(commit=True)
             cd = form.cleaned_data
 	    message = 'Diagnosis: '+cd['diagnosis']+'\n'+'Impact: '+cd['impact']+'\n'+'Resolution: '+cd['resolution']+'\n'+'Responsibility: '+cd['responsibility']+'\n'+'Action: '+cd['action']
-	    send_mail(
-                cd['event'],
-                message,
-                cd.get('email', 'johnhopkins@gmx.co.uk'),
-                ['john@johnhopkins.co.uk'],
-            )
+	    try:
+	        send_mail(
+                    cd['event'],
+                    message,
+                    cd.get('email', 'johnhopkins@gmx.co.uk'),
+                    ['john@johnhopkins.co.uk'],
+                )
+	    except Exception, error:
+		 print "Unable to send e-mail: '%s'." % str(error)
 	    return index(request)
         else:
             print form.errors

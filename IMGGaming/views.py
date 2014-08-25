@@ -50,9 +50,10 @@ def add_report(request):
         if form.is_valid():
             form.save(commit=True)
             cd = form.cleaned_data
+	    message = 'Diagnosis: '+cd['diagnosis']+'\n'+'Impact: '+cd['impact']+'\n'+'Resolution: '+cd['resolution']+'\n'+'Responsibility: '+cd['responsibility']+'\n'+'Action: '+cd['action']
 	    send_mail(
                 cd['event'],
-                cd['diagnosis'],
+                message,
                 cd.get('email', 'johnhopkins@gmx.co.uk'),
                 ['john@johnhopkins.co.uk'],
             )

@@ -8,14 +8,17 @@ class ReportForm(forms.ModelForm):
     author = forms.CharField(max_length=40)
     datetime = forms.DateTimeField()
     diagnosis = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
-    impact = forms.CharField(widget=forms.Textarea(attrs={}))
-    resolution  = forms.CharField(widget=forms.Textarea(attrs={}))
-    responsibility = forms.CharField(widget=forms.Textarea(attrs={}))
+    impact = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
+    resolution  = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
+    responsibility = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
     actionable = forms.BooleanField(required=False)
-    action = forms.CharField(widget=forms.Textarea(attrs={}))
+    action = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
 
     class Meta:
         model = Report
+	widgets = {
+            'datetime' : forms.DateInput(attrs={'class':'date'})
+        }
 
 class UserForm(forms.ModelForm):
     username = forms.CharField(help_text="Please enter a username.")

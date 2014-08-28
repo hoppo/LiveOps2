@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class ReportForm(forms.ModelForm):
     event = forms.CharField(max_length=100)
     author = forms.CharField(max_length=40)
-    datetime = forms.DateTimeField()
+    datetime = forms.DateTimeField(label='Date/Time', initial='MM/DD/YYYY HH:MM')
     diagnosis = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
     impact = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
     resolution  = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))

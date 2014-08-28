@@ -8,15 +8,16 @@
 
 <div class="hero-unit">
 	<h2>The Whiteboard</h2>
-
-
     {% if matches %}
-    <table border=1>
-        <th>Gallery</th><th>Name</th>
-        {% for match in matches %}
-	    <tr><td><h1>{{match.gallery}}</td><td><h2>{{match.name}}</td></tr>
-        {% endfor %}
-    </table>
+        <table>
+            <th>Gallery</th><th>Name</th><th>BT Lineup</th><th>ADI Lineup</th>
+                {% for match in matches %}
+	            <tr><td><h1>{{match.gallery}}</td><td><h2>{{match.name}}</td>
+		    <td><center><button class='btn btn-large btn-danger' type='button'><i class="icon-remove icon-white"></i></td>
+		    <td><center><button class='btn btn-large btn-danger' type='button'><i class="icon-remove icon-white"></i></td>
+			</tr>
+                {% endfor %}
+        </table>
     {% else %}
         There are no matches present
     {% endif %}

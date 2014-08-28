@@ -6,7 +6,7 @@ class Match(models.Model):
     adi = models.BooleanField()
     isdn = models.CharField(max_length=12, unique=True)
     sound_eng = models.CharField(max_length=12)
-    gallery = models.integerField()
+    gallery = models.IntegerField()
 
     def __unicode__(self):
         return self.name

@@ -26,7 +26,6 @@ def index(request):
         response.set_cookie('last_visit', datetime.now())
     return response
 
-
 def about(request):
     context = RequestContext(request)
     context_dict = {'boldmessage': "I am bold font from the about context"}

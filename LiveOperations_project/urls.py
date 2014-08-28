@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^$', index), 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^IMGGaming/', include('IMGGaming.urls')),
+    url(r'^whiteboard/', include('whiteboard.urls')),
 )
 
 if settings.DEBUG:

@@ -18,8 +18,10 @@
 
 <td>
 
-<form action="">
-      <input type="submit" method="post" class="btn btn-large btn-danger" value="&#10008" />
+<form action="" method="post">
+        <input type="hidden" name="toggle" value="toggle_button"/>
+        <button class="btn btn-large btn-danger"><i class="icon-remove icon-white"></i></button>
+        {% csrf_token %}
 </form>
 
 

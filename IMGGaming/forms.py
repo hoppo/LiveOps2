@@ -7,7 +7,7 @@ class ReportForm(forms.ModelForm):
     event = forms.CharField(max_length=100)
     author = forms.CharField(max_length=40)
     datetime = forms.DateTimeField(widget=forms.TextInput(attrs={'placeholder': 'MM/DD/YYYY HH:MM'}))
-    diagnosis = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'cols': 140, 'style': 'width: 100%'}))
+    diagnosis = forms.CharField(widget=forms.Textarea(attrs={'cols': 100, 'rows':3, 'style': 'width: 100%'}))
     impact = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
     resolution  = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))
     responsibility = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'style': 'width: 100%'}))

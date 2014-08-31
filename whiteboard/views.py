@@ -8,11 +8,20 @@ def index(request):
     match_list = Match.objects.all()
     context_dict = {'matches': match_list}
     if request.method == "POST":
-        bt_toggle = request.POST.get('bt_toggle', None)
-	#toggle match.bt
-	a = Match.objects.get(id=bt_toggle)
-	if a.bt == False:
-	    a.bt = True
-	    a.save()
-	#return HttpResponse(a.bt)
+        if 'adi_toggle' in request.POST:
+	    adi_toggle = request.POST.get('adi_toggle', None)
+	    a = Match.objects.get(id=adi_toggle)
+	    if a.adi == False:
+	        a.adi = True
+	    elif a.adi == True:
+	        a.adi = False
+    	    a.save()
+	elif 'bt_toggle' in request.POST:	
+	    bt_toggle = request.POST.get('bt_toggle', None)
+            b = Match.objects.get(id=bt_toggle)
+            if b.bt == False:
+                b.bt = True
+            elif b.bt == True:
+                b.bt = False
+            b.save()
     return render_to_response('whiteboard/index.html', context_dict, context)

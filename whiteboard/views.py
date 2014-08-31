@@ -8,7 +8,11 @@ def index(request):
     match_list = Match.objects.all()
     context_dict = {'matches': match_list}
     if request.method == "POST":
-        toggle = request.POST.get('toggle', None)
-	return HttpResponse('this is toggling, sort of!')
-##  toggle the status of the database
+        bt_toggle = request.POST.get('bt_toggle', None)
+	#toggle match.bt
+	a = Match.objects.get(id=bt_toggle)
+	if a.bt == False:
+	    a.bt = True
+	    a.save()
+	#return HttpResponse(a.bt)
     return render_to_response('whiteboard/index.html', context_dict, context)

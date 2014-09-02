@@ -32,4 +32,20 @@ def index(request):
             elif a.gal == True:
                 a.gal = False
             a.save()
+	elif 'swif_toggle' in request.POST:
+            swif_toggle = request.POST.get('swif_toggle', None)
+            a = Match.objects.get(id=swif_toggle)
+            if a.swif == False:
+                a.swif = True
+            elif a.swif == True:
+                a.swif = False
+            a.save()
+	elif 'mars_toggle' in request.POST:
+            mars_toggle = request.POST.get('mars_toggle', None)
+            a = Match.objects.get(id=mars_toggle)
+            if a.mars == False:
+                a.mars = True
+            elif a.mars == True:
+                a.mars = False
+            a.save()
     return render_to_response('whiteboard/index.html', context_dict, context)

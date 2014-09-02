@@ -18,10 +18,18 @@ def index(request):
     	    a.save()
 	elif 'bt_toggle' in request.POST:	
 	    bt_toggle = request.POST.get('bt_toggle', None)
-            b = Match.objects.get(id=bt_toggle)
-            if b.bt == False:
-                b.bt = True
-            elif b.bt == True:
-                b.bt = False
-            b.save()
+            a = Match.objects.get(id=bt_toggle)
+            if a.bt == False:
+                a.bt = True
+            elif a.bt == True:
+                a.bt = False
+            a.save()
+	elif 'gal_toggle' in request.POST:
+            gal_toggle = request.POST.get('gal_toggle', None)
+            a = Match.objects.get(id=gal_toggle)
+            if a.gal == False:
+                a.gal = True
+            elif a.gal == True:
+                a.gal = False
+            a.save()
     return render_to_response('whiteboard/index.html', context_dict, context)
